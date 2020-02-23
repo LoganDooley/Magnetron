@@ -16,6 +16,10 @@ public class playermovement : MonoBehaviour
 
     private bool canJump = true;
 
+    public bool pull = false;
+
+    public float magnet_velocity = 1f;
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -30,18 +34,24 @@ public class playermovement : MonoBehaviour
                 velocity.x += accel;
             }
         }
-        if (Input.GetKey(KeyCode.Space) && canJump && Mathf.Abs(velocity.y) < 0.01)
+        if (Input.GetKey(KeyCode.Space) && canJump && Mathf.Abs(velocity.y) < 0.01 && !pull)
         {
             velocity.y = jump_velocity;
             canJump = false;
         }
         velocity -= velocity * friction;
+        if (pull)
+        {
+            velocity += Vector3.up * magnet_velocity;
+        }
         transform.position += velocity;
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
         canJump = true;
-        print("collision");
     }
-
+    public void pullSet(bool set)
+    {
+        pull = set;
+    }
 }

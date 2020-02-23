@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\MagneticPull.cs" />
     <Compile Include="Assets\Scripts\playermovement.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/logan/Desktop/MagnetronProject/Magnetron/Magnetron/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
