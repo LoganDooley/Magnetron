@@ -11,6 +11,7 @@ public class PlayerMvt : MonoBehaviour
     public bool can_jump = false;
     public bool pull = false;
     public float magnet_accel = 0.1f;
+    public GameObject magnet;
 
     public void FixedUpdate()
     {
@@ -55,6 +56,24 @@ public class PlayerMvt : MonoBehaviour
         else
         {
             //rb.gravityScale = 3;
+        }
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        bool flag = magnet.GetComponent<MagneticPull>().getStatus();
+        if (collision.gameObject.tag == "Magnet_Field" && flag)
+        {
+            pullSet(true);
+            print("collision");
+        }
+    }
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        bool flag = magnet.GetComponent<MagneticPull>().getStatus();
+        if (collision.gameObject.tag == "Magnet_Field" && flag)
+        {
+            pullSet(false);
+            print("exit");
         }
     }
 }

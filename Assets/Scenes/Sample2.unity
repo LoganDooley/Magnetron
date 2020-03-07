@@ -246,6 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1318772388}
+  box: {fileID: 1114467668}
   active: 0
   standard: {x: 0, y: 0}
 --- !u!61 &543804412
@@ -558,6 +559,7 @@ GameObject:
   - component: {fileID: 1114467671}
   - component: {fileID: 1114467670}
   - component: {fileID: 1114467669}
+  - component: {fileID: 1114467673}
   m_Layer: 0
   m_Name: Box
   m_TagString: Untagged
@@ -676,6 +678,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1114467673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114467668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373d0fde3dd54ad45b30bd81ff19ef5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pull: 0
+  magnet: {fileID: 543804409}
 --- !u!1 &1187377938
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,6 +1000,7 @@ MonoBehaviour:
   can_jump: 0
   pull: 0
   magnet_accel: 0.1
+  magnet: {fileID: 543804409}
 --- !u!1 &1391711768 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3607633118017981259, guid: 256844e461066d44ba8ca51ed9268364,

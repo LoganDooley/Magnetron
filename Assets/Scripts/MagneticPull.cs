@@ -5,6 +5,7 @@ using UnityEngine;
 public class MagneticPull : MonoBehaviour
 {
     public GameObject player;
+    public GameObject box;
 
     public bool active = false;
 
@@ -24,6 +25,7 @@ public class MagneticPull : MonoBehaviour
             active = false;
             gameObject.transform.position = Vector2.up * 1000;
             player.GetComponent<PlayerMvt>().pullSet(false);
+            box.GetComponent<boxPull>().pullSet(false);
         }
         else
         {
@@ -31,21 +33,8 @@ public class MagneticPull : MonoBehaviour
             gameObject.transform.position = standard;
         }
     }
-
-    public void OnTriggerEnter2D(Collider2D collision)
+    public bool getStatus()
     {
-        if (collision.gameObject.tag == "player" && active)
-        {
-            player.GetComponent<PlayerMvt>().pullSet(true);
-            print("collision");
-        }
-    }
-    public void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "player" && active)
-        {
-            player.GetComponent<PlayerMvt>().pullSet(false);
-            print("exit");
-        }
+        return active;
     }
 }
