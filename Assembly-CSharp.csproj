@@ -66,7 +66,7 @@
     <Compile Include="Assets\Scripts\MagneticPull.cs" />
     <Compile Include="Assets\Scripts\PlayerMvt.cs" />
     <Compile Include="Assets\Scripts\Scrolling.cs" />
-    <Compile Include="Assets\boxPull.cs" />
+    <Compile Include="Assets\Scripts\boxPull.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/logan/Desktop/Magnetron/Magnetron/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

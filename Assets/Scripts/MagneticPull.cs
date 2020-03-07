@@ -17,6 +17,14 @@ public class MagneticPull : MonoBehaviour
         gameObject.transform.position = Vector2.up * 1000;
     }
 
+    public void FixedUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            toggle();
+        }
+    }
+
     public void toggle()
     {
         print("Q");
@@ -25,7 +33,10 @@ public class MagneticPull : MonoBehaviour
             active = false;
             gameObject.transform.position = Vector2.up * 1000;
             player.GetComponent<PlayerMvt>().pullSet(false);
-            box.GetComponent<boxPull>().pullSet(false);
+            if (box != null)
+            {
+                box.GetComponent<boxPull>().pullSet(false);
+            }
         }
         else
         {
