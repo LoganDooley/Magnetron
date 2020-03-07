@@ -30,6 +30,10 @@ public class PlayerMvt : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jump_accel, ForceMode2D.Impulse);
         }
+        if (pull)
+        {
+            rb.AddForce(Vector2.up * rb.gravityScale * 3 * gameObject.GetComponent<Rigidbody2D>().mass, ForceMode2D.Force);
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -46,11 +50,11 @@ public class PlayerMvt : MonoBehaviour
         pull = check;
         if (pull)
         {
-            rb.gravityScale = 0;
+            //rb.gravityScale = 0;
         }
         else
         {
-            rb.gravityScale = 3;
+            //rb.gravityScale = 3;
         }
     }
 }
